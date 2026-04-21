@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="21">
+      <module name="kore.app" target="21" />
+      <module name="kore.core-ui" target="21" />
+      <module name="multiplatform-library-template.kore-ui.commonMain" target="21" />
+      <module name="multiplatform-library-template.kore-ui.commonTest" target="21" />
+      <module name="multiplatform-library-template.kore.commonMain" target="21" />
+      <module name="multiplatform-library-template.kore.commonTest" target="21" />
+      <module name="multiplatform-library-template.library.commonMain" target="21" />
+      <module name="multiplatform-library-template.library.commonTest" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
