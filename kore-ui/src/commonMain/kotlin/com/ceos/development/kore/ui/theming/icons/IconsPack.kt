@@ -8,6 +8,10 @@ import com.ceos.development.kore.ui.theming.icons.implementations.DefaultPack
 
 interface IconsPack {
     val search: ImageVector
+    val dropDownExpanded: ImageVector
+    val dropDownCollapsed: ImageVector
+    val setting: ImageVector
+    val reset:ImageVector
 
     companion object {
         private var pack by mutableStateOf<IconsPack>(DefaultPack())

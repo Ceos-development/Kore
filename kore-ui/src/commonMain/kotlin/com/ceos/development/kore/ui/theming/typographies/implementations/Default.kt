@@ -17,11 +17,20 @@ data class Default(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
     ),
+
+    override val body: TextStyle = TextStyle(
+        fontFamily =  FontFamily.SansSerif,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.2.sp,
+    ),
+
     override val label: TextStyle = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
         letterSpacing = 0.5.sp,
     )
 ):Typographies

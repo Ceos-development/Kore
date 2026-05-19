@@ -9,6 +9,7 @@ import com.ceos.development.kore.ui.theming.typographies.implementations.Default
 interface Typographies {
     val title: TextStyle
     val subtitle: TextStyle
+    val body: TextStyle
     val label: TextStyle
 
     companion object {

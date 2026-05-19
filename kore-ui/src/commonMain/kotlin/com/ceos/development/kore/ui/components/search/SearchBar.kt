@@ -2,6 +2,7 @@ package com.ceos.development.kore.ui.components.search
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,6 +25,7 @@ fun SearchBar(
     colors: SearchBarColors = SearchBarDefaults.colors(),
     textStyle: TextStyle = Typographies.current.label
 ) {
+    MaterialTheme {  }
     OutlinedTextField(
         modifier = modifier,
         value = value,

@@ -12,8 +12,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/kore" />
             <option value="$PROJECT_DIR$/kore-ui" />
+            <option value="$PROJECT_DIR$/samples" />
           </set>
         </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sample" />
+        <option name="gradleJvm" value="jbr-21" />
       </GradleProjectSettings>
     </option>
   </component>

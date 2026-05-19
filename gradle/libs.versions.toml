@@ -5,6 +5,7 @@ kotlin = "2.2.20"
 android-minSdk = "24"
 android-compileSdk = "36"
 
+uiToolingPreview = "1.10.0"
 vanniktechMavenPublish = "0.34.0"
 kotlinStdlib = "2.2.20"
 runner = "1.5.2"
@@ -36,7 +37,6 @@ compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMul
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
 kotlinx-coroutinesSwing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "uiTooling" }
 
 
 [plugins]
@@ -46,3 +46,4 @@ vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "
 jetbrains-compose = { id = "org.jetbrains.compose", version = "1.9.0"}
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }

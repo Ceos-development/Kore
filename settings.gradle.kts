@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "kmp-libraries"
 include(":kore")
 include(":kore-ui")
+include(":samples")
