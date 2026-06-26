@@ -11,7 +11,12 @@ interface IconsPack {
     val dropDownExpanded: ImageVector
     val dropDownCollapsed: ImageVector
     val setting: ImageVector
-    val reset:ImageVector
+    val reset: ImageVector
+    val edit: ImageVector
+    val back: ImageVector
+    val chevronRight: ImageVector
+    val clear: ImageVector
+    val close: ImageVector
 
     companion object {
         private var pack by mutableStateOf<IconsPack>(DefaultPack())

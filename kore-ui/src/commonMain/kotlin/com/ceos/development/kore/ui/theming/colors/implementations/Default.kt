@@ -6,8 +6,12 @@ import com.ceos.development.kore.ui.theming.colors.Colors
 data class Default(
     override val primary: Color = ColorTokens.Primary40,
     override val onPrimary: Color = ColorTokens.Primary100,
+    override val primaryDisabled: Color = ColorTokens.Primary100,
+    override val onPrimaryDisabled: Color = ColorTokens.NeutralVariant30,
     override val secondary: Color = ColorTokens.Secondary40,
     override val onSecondary: Color = ColorTokens.Secondary100,
+    override val secondaryDisabled: Color = ColorTokens.Primary100,
+    override val onSecondaryDisabled: Color = ColorTokens.NeutralVariant30,
     override val background: Color = ColorTokens.Neutral99,
     override val onBackground: Color = ColorTokens.Neutral10,
     override val lowestEmphasisSurface: Color = ColorTokens.Neutral100,

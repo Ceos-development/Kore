@@ -5,11 +5,15 @@ import androidx.compose.ui.graphics.Color
 import com.ceos.development.kore.ui.theming.colors.Colors
 
 @Immutable
-internal class DarkThemeColors: Colors {
+internal class DarkThemeColors : Colors {
     override val primary: Color = ColorTokens.Primary80
     override val onPrimary: Color = ColorTokens.Primary20
+    override val primaryDisabled: Color = ColorTokens.Neutral90
+    override val onPrimaryDisabled: Color = ColorTokens.NeutralVariant80
     override val secondary: Color = ColorTokens.Secondary80
     override val onSecondary: Color = ColorTokens.Secondary20
+    override val secondaryDisabled: Color = ColorTokens.Neutral90
+    override val onSecondaryDisabled: Color = ColorTokens.NeutralVariant80
     override val background: Color = ColorTokens.Neutral10
     override val onBackground: Color = ColorTokens.Neutral90
     override val lowestEmphasisSurface: Color = ColorTokens.Neutral4

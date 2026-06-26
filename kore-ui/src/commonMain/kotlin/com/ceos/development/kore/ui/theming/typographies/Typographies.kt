@@ -11,6 +11,7 @@ interface Typographies {
     val subtitle: TextStyle
     val body: TextStyle
     val label: TextStyle
+    val button: TextStyle
 
     companion object {
         private var typographies by mutableStateOf<Typographies>(Default())

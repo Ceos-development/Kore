@@ -9,21 +9,22 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import com.ceos.development.kore.ui.components.ComponentsDefaults
 import com.ceos.development.kore.ui.components.dropdown.models.DropdownItem
-import com.ceos.development.kore.ui.theming.icons.IconsPack
+import com.ceos.development.kore.ui.components.dropdown.models.DropdownState
 
 @Composable
-fun <T: DropdownItem> LargeDropdownMenu(
-    label: String,
+fun <T : DropdownItem> LargeDropdownMenu(
+    state: DropdownState<T>,
     modifier: Modifier = Modifier,
-    state: DropdownState<T> = remember { DropdownState() },
-    enabled: Boolean = true,
     notSetLabel: String? = null,
+    shape: Shape = RectangleShape,
     selectedItemToString: @Composable (T) -> String = { it.displayText },
+    colors: DropDownColors = ComponentsDefaults.Dropdown.colors,
     drawItem: @Composable (T, Boolean, Boolean, () -> Unit) -> Unit = { item, selected, itemEnabled, onClick ->
         LargeDropdownMenuItem(
             text = item.displayText,
@@ -35,12 +36,12 @@ fun <T: DropdownItem> LargeDropdownMenu(
 ) {
     val items = remember { state.choices }
     LargeDropdownMenu(
-        label = label,
         items = items,
         modifier = modifier,
-        enabled = enabled,
         notSetLabel = notSetLabel,
         selectedIndex = state.selectedIndex,
+        shape = shape,
+        colors = colors,
         onItemSelected = state::onItemSelected,
         selectedItemToString = selectedItemToString,
         drawItem = drawItem,
@@ -49,15 +50,15 @@ fun <T: DropdownItem> LargeDropdownMenu(
 
 
 @Composable
-fun <T: DropdownItem> LargeDropdownMenu(
-    label: String,
+fun <T : DropdownItem> LargeDropdownMenu(
     items: List<T>,
     modifier: Modifier = Modifier,
-    enabled: Boolean = true,
     notSetLabel: String? = null,
     selectedIndex: Int = -1,
+    shape: Shape = RectangleShape,
     onItemSelected: (index: Int, item: T) -> Unit,
     selectedItemToString: @Composable (T) -> String = { it.displayText },
+    colors: DropDownColors = ComponentsDefaults.Dropdown.colors,
     drawItem: @Composable (T, Boolean, Boolean, () -> Unit) -> Unit = { item, selected, itemEnabled, onClick ->
         LargeDropdownMenuItem(
             text = item.displayText,
@@ -68,29 +69,16 @@ fun <T: DropdownItem> LargeDropdownMenu(
     },
 ) {
     var expanded by remember { mutableStateOf(false) }
-    Box(modifier = modifier.height(IntrinsicSize.Min)) {
-        OutlinedTextField(
-            label = { Text(label) },
-            value = items.getOrNull(selectedIndex)?.let { selectedItemToString(it) } ?: "",
-            enabled = enabled,
-            modifier = Modifier.fillMaxWidth(),
-            trailingIcon = {
-                val icon = if (expanded) IconsPack.current.dropDownExpanded else IconsPack.current.dropDownCollapsed
-                Icon(icon, "")
-            },
-            onValueChange = { },
-            readOnly = true,
-        )
-
-        // Transparent clickable surface on top of OutlinedTextField
-        Surface(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 8.dp)
-                .clip(MaterialTheme.shapes.extraSmall)
-                .clickable(enabled = enabled) { expanded = true },
-            color = Color.Transparent,
-        ) {}
+    CompositionLocalProvider(
+        LocalDropDownColors provides colors,
+        LocalDropDownShape provides shape
+    ) {
+        Box(modifier = modifier.height(IntrinsicSize.Min)) {
+            DropdownDisplayFieldImpl(
+                value = items.getOrNull(selectedIndex)?.let { selectedItemToString(it) } ?: "",
+                onClick = { expanded = true }
+            )
+        }
     }
 
     if (expanded) {

@@ -52,7 +52,7 @@ fun PredictiveInputTextField(
     var expanded by remember { mutableStateOf(false) }
     ExposedDropdownMenuBox(
         modifier = modifier,
-        expanded = expanded,
+        expanded = expanded && state.predictions.isNotEmpty(),
         onExpandedChange = { expanded = !expanded }
     ) {
         BasicTextField(

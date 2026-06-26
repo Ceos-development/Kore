@@ -64,6 +64,13 @@ internal class PredictiveTextFieldStateImpl(
         }
     }
 
+    override fun updatePredictions(block: (CharSequence) -> List<Prediction>) {
+        _predictions.apply {
+            clear()
+            addAll(block.invoke(textFieldState.text))
+        }
+    }
+
     /**
      * The current propositions to complete the text being written
      */

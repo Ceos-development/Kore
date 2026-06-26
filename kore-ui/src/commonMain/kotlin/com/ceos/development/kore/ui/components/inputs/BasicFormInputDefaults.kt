@@ -1,5 +1,7 @@
 package com.ceos.development.kore.ui.components.inputs
 
+import androidx.compose.foundation.text.input.InputTransformation
+import androidx.compose.foundation.text.input.OutputTransformation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
@@ -19,6 +21,10 @@ object BasicFormInputDefaults {
         content = content,
         cursor = cursor,
     )
+
+    val inputTransformation: InputTransformation? = null
+
+    val outputTransformation: OutputTransformation? = null
 
     @Immutable
     data class BasicFormInputColors(

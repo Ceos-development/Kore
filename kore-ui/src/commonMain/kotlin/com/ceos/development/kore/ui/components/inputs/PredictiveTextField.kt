@@ -34,7 +34,7 @@ fun PredictiveTextField(
     }
     ExposedDropdownMenuBox(
         modifier = modifier,
-        expanded = expanded,
+        expanded = expanded && predictions.isNotEmpty(),
         onExpandedChange = { expanded = it },
     ) {
         BasicFormInput(

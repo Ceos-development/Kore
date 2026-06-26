@@ -11,8 +11,12 @@ import com.ceos.development.kore.ui.theming.colors.implementations.Default
 interface Colors {
     val primary: Color
     val onPrimary: Color
+    val primaryDisabled: Color
+    val onPrimaryDisabled: Color
     val secondary: Color
     val onSecondary: Color
+    val secondaryDisabled: Color
+    val onSecondaryDisabled: Color
     val background: Color
     val onBackground: Color
     val lowestEmphasisSurface: Color
@@ -72,7 +76,8 @@ interface Colors {
 
         @Composable
         internal fun reference() {
-            MaterialTheme { }
+            MaterialTheme {
+            }
 
         }
     }

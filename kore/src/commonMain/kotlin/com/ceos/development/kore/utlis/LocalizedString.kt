@@ -7,6 +7,20 @@ data class LocalizedString(
     val fr: String? = null
 ) {
 
+    /**
+     * Return true if one of the localization contains the value.
+     * @param [value] the value to search for.
+     * @param [locale] optional search filter if you want to search for a specific language
+     */
+    fun contains(other: CharSequence, ignoreCase: Boolean = false, locale: Locale? = null): Boolean {
+        if (locale == null) return en?.contains(other, ignoreCase) == true || fr?.contains(other, ignoreCase) == true
+        return when (locale.language) {
+            "en" -> en?.contains(other, ignoreCase) == true
+            "fr" -> fr?.contains(other, ignoreCase) == true
+            else -> false
+        }
+    }
+
     companion object {
         fun of(value: String): LocalizedString = LocalizedString(
             en = value,

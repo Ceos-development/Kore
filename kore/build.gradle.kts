@@ -29,6 +29,8 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
+                implementation(libs.kotlinx.coroutine.core)
+
                 // Add KMP dependencies here
             }
         }

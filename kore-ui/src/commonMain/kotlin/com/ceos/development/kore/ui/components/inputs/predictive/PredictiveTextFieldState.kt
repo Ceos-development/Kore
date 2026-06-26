@@ -11,4 +11,5 @@ interface PredictiveTextFieldState {
     val predictions: List<Prediction>
 
     fun edit(block: TextFieldBuffer.() -> Unit)
+    fun updatePredictions(block: (CharSequence) -> List<Prediction>)
 }

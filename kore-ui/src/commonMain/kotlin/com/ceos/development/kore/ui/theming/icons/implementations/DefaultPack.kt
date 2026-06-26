@@ -12,4 +12,9 @@ class DefaultPack internal constructor(
     override val dropDownCollapsed: ImageVector = ArrowDropUp,
     override val setting: ImageVector = Settings,
     override val reset: ImageVector = Reset,
+    override val edit: ImageVector = Edit,
+    override val back: ImageVector = Back,
+    override val chevronRight: ImageVector = ChevronRight,
+    override val clear: ImageVector = Close,
+    override val close: ImageVector = Close,
 ) : IconsPack
