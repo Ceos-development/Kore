@@ -9,6 +9,7 @@ import java.util.*
 class CurrencyOutputTransformation(
     private val locale: Locale = Locale.getDefault(),
     private val numberOfDecimals: Int = 2,
+    private val suffix: String = "$",
 ) : OutputTransformation {
 
     private val decimalSeparator = DecimalFormatSymbols.getInstance(locale).decimalSeparator
@@ -20,5 +21,6 @@ class CurrencyOutputTransformation(
         }
 
         insert(length - numberOfDecimals, decimalSeparator.toString())
+        insert(length, suffix)
     }
 }
