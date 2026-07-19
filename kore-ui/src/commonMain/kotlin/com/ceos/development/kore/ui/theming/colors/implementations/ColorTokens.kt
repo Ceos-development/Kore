@@ -1,7 +1,9 @@
 package com.ceos.development.kore.ui.theming.colors.implementations
 
 import androidx.compose.ui.graphics.Color
-
+/*
+* the numbers after the color represent the Tone (luminance) of the color on a scale from 0 (absolute black) to 100 (absolute white).
+* As the number gets higher, the color gets lighter and closer to white, which is why they are ideal for background tints.*/
 internal object ColorTokens {
     val Black = Color(red = 0, green = 0, blue = 0)
     val Error0 = Color(red = 0, green = 0, blue = 0)
@@ -17,6 +19,32 @@ internal object ColorTokens {
     val Error90 = Color(red = 249, green = 222, blue = 220)
     val Error95 = Color(red = 252, green = 238, blue = 238)
     val Error99 = Color(red = 255, green = 251, blue = 249)
+    val Success0 = Color(red = 0, green = 0, blue = 0)
+    val Success10 = Color(red = 0, green = 36, blue = 0)
+    val Success20 = Color(red = 0, green = 60, blue = 0)
+    val Success30 = Color(red = 0, green = 85, blue = 0)
+    val Success40 = Color(red = 0, green = 111, blue = 0)
+    val Success50 = Color(red = 0, green = 140, blue = 0)
+    val Success60 = Color(red = 0, green = 168, blue = 5)
+    val Success70 = Color(red = 60, green = 196, blue = 46)
+    val Success80 = Color(red = 95, green = 225, blue = 75)
+    val Success90 = Color(red = 126, green = 254, blue = 103)
+    val Success95 = Color(red = 199, green = 255, blue = 182)
+    val Success99 = Color(red = 244, green = 255, blue = 239)
+    val Success100 = Color(red = 255, green = 255, blue = 255)
+    val Warning0 = Color(red = 0, green = 0, blue = 0)
+    val Warning10 = Color(red = 41, green = 29, blue = 10)
+    val Warning20 = Color(red = 92, green = 59, blue = 10)
+    val Warning30 = Color(red = 153, green = 92, blue = 0)
+    val Warning40 = Color(red = 204, green = 122, blue = 0)
+    val Warning50 = Color(red = 255, green = 153, blue = 0)     // Your exact base color
+    val Warning60 = Color(red = 255, green = 173, blue = 51)
+    val Warning70 = Color(red = 255, green = 194, blue = 102)
+    val Warning80 = Color(red = 255, green = 214, blue = 153)
+    val Warning90 = Color(red = 246, green = 233, blue = 213)  // Warm cream background
+    val Warning95 = Color(red = 248, green = 243, blue = 236)  // Very soft tint container
+    val Warning99 = Color(red = 253, green = 253, blue = 252)  // Clean, off-white surface tone
+    val Warning100 = Color(red = 255, green = 255, blue = 255)
     val Neutral0 = Color(red = 0, green = 0, blue = 0)
     val Neutral10 = Color(red = 28, green = 27, blue = 31)
     val Neutral100 = Color(red = 255, green = 255, blue = 255)

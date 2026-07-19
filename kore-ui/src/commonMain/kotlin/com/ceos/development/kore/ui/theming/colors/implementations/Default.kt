@@ -22,4 +22,10 @@ data class Default(
     override val highEmphasisSurface: Color = ColorTokens.Neutral92,
     override val highestEmphasisSurface: Color = ColorTokens.Neutral90,
     override val outline: Color = ColorTokens.NeutralVariant50,
+    override val success: Color = ColorTokens.Success50,
+    override val onSuccess: Color = ColorTokens.Neutral0,
+    override val warning: Color = ColorTokens.Warning50,
+    override val onWarning: Color = ColorTokens.Neutral24,
+    override val error: Color = ColorTokens.Error50,
+    override val onError: Color = ColorTokens.Neutral100,
 ) : Colors

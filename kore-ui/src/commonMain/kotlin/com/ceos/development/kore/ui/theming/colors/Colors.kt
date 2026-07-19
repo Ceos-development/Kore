@@ -27,6 +27,12 @@ interface Colors {
     val highEmphasisSurface: Color
     val highestEmphasisSurface: Color
     val outline: Color
+    val success: Color
+    val onSuccess: Color
+    val warning: Color
+    val onWarning: Color
+    val error: Color
+    val onError: Color
 
     companion object {
         private var _colors by mutableStateOf<Pair<Colors, Colors>>(

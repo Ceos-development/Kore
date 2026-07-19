@@ -24,4 +24,10 @@ internal class DarkThemeColors : Colors {
     override val highEmphasisSurface: Color = ColorTokens.Neutral17
     override val highestEmphasisSurface: Color = ColorTokens.Neutral22
     override val outline: Color = ColorTokens.NeutralVariant60
+    override val success: Color = ColorTokens.Success50
+    override val onSuccess: Color = ColorTokens.Neutral0
+    override val warning: Color = ColorTokens.Warning50
+    override val onWarning: Color = ColorTokens.Neutral24
+    override val error: Color = ColorTokens.Error50
+    override val onError: Color = ColorTokens.Neutral100
 }
