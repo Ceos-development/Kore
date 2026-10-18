@@ -2,6 +2,12 @@ name: Publish
 on:
   release:
     types: [released]
+  workflow_dispatch:
+    inputs:
+      publish_version:
+        description: Version to publish (for example, 1.0.0)
+        required: true
+        type: string
 jobs:
   publish:
     name: Release build and publish
@@ -17,7 +23,7 @@ jobs:
       - name: Publish to MavenCentral
         run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
         env:
-          ORG_GRADLE_PROJECT_PUBLISH_VERSION: ${{ github.event.release.tag_name }}
+          ORG_GRADLE_PROJECT_PUBLISH_VERSION: ${{ github.event.release.tag_name || inputs.publish_version }}
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.SIGNING_KEY_ID }}
