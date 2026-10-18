@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
+val libraryVersion = providers.gradleProperty("PUBLISH_VERSION").getOrElse("1.0.0-SNAPSHOT")
+
 kotlin {
     jvm()
 
@@ -61,15 +63,15 @@ kotlin {
 }
 
 mavenPublishing {
+    coordinates("com.ceosdevelopment", "kore", libraryVersion)
+
     publishToMavenCentral()
 
     signAllPublications()
 
-    coordinates("com.ceosdevelopment", "kore", "1.0.0-SNAPSHOT")
-
     pom {
         name = "Kore"
-        description = "A set of methods and classes used throughout my applications"
+        description = "Common Kotlin extensions, logging, navigation, and localization utilities"
         inceptionYear = "2026"
         url = "https://github.com/Ceos-development/Kore"
         licenses {

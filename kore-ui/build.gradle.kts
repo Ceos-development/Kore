@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
+val libraryVersion = providers.gradleProperty("PUBLISH_VERSION").getOrElse("1.0.0-SNAPSHOT")
+
 kotlin {
     androidLibrary {
         namespace = "com.ceos.development.kore.ui"
@@ -58,15 +60,15 @@ kotlin {
 }
 
 mavenPublishing {
+    coordinates("com.ceosdevelopment", "kore-ui", libraryVersion)
+
     publishToMavenCentral()
 
     signAllPublications()
 
-    coordinates("com.ceosdevelopment", "kore-ui", "1.0.0-SNAPSHOT")
-
     pom {
         name = "Kore-UI"
-        description = "A set of methods and classes used throughout my applications"
+        description = "Reusable Kotlin Multiplatform UI components and theming"
         inceptionYear = "2026"
         url = "https://github.com/Ceos-development/Kore"
         licenses {
